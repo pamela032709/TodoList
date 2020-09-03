@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage
+    xmlns:pages="clr-namespace:FridaysTodoList.Views"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FridaysTodoList.Views.MainNavigationPage">
+    <!--Pages can be added as references or inline-->
+   <NavigationPage Title="" IconImageSource="explore">
+		<x:Arguments>
+			<pages:InfoPage />
+		</x:Arguments>
+	</NavigationPage>
+     <!--<pages:CampusPage />-->
+      <pages:CreatePage IconImageSource="favoritewhite" />
+     
+      <pages:MyListsPage IconImageSource="notificationWhite"/>
+      
+</TabbedPage>

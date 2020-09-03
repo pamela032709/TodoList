@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage  xmlns:viewModels="clr-namespace:FridaysTodoList.ViewModels"
+              xmlns:plugin="clr-namespace:Plugin.Badge.Abstractions;assembly=Plugin.Badge.Abstractions"
+              plugin:TabBadge.BadgeText="{Binding Count}"
+              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+             xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FridaysTodoList.Views.MyListsPage">
+     
+
+     <StackLayout Padding="10">
+            <Label Margin="5,0,0,0" Text="Todo" FontSize="30" FontAttributes="Bold" TextColor="#791AE5"/>
+            <Label Margin="5,0,0,0" Text="To Edit/Delete swipe" FontSize="15"/>
+           
+         <BoxView Margin="10,0,10,0" WidthRequest="1" HeightRequest="2" HorizontalOptions="FillAndExpand" Color="#311961"></BoxView>
+            <CollectionView x:Name="NotificationList"  ItemsSource="{Binding ListData}"  SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems>
+                                    <SwipeItemView>
+                                        <StackLayout Padding="15" Spacing="10" BackgroundColor="Red" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                            <Label Text="Delete" TextColor="White" VerticalOptions="CenterAndExpand"/>
+                                             <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={x:Reference NotificationList}, Path=BindingContext.DeleteCommand}"/>
+                                                    </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                    </SwipeItemView>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <SwipeView.LeftItems>
+                                <SwipeItems>
+                                    <SwipeItemView>
+                                        <StackLayout Padding="15" Spacing="10" BackgroundColor="#791AE5" Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                            <Label Text="Edit" TextColor="White" VerticalOptions="CenterAndExpand"/>
+                                             <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer CommandParameter="{Binding .}" Command="{Binding Source={x:Reference NotificationList}, Path=BindingContext.EditItem}"/>
+                                                    </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                    </SwipeItemView>
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <StackLayout HorizontalOptions="FillAndExpand" Padding="10">
+                                <Label Text="{Binding ItemName}" FontAttributes="Bold" Style="{StaticResource EventLblTitle}" TextDecorations="{Binding Decoration}"  />
+                                <Label Text="{Binding ItemNotes}" Style="{StaticResource EventLbllabel}" TextDecorations="{Binding Decoration}"  />
+                                <Label Text="{Binding UserLocation}" Style="{StaticResource EventLbllabel}" TextDecorations="{Binding Decoration}" />
+                                <Label Text="{Binding Date}" Style="{StaticResource EventLbllabel}" TextDecorations="{Binding Decoration}" />
+                            </StackLayout>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+</ContentPage>

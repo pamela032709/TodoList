@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FridaysTodoList.App">
+    <Application.Resources>
+        <!--Global Styles-->
+        <Color x:Key="NavigationPrimary">#1AACE8</Color>
+        <Color x:Key="ListSeparator">#C8C7CC</Color>
+        <Color x:Key="NsBlue">#1AACE8</Color>
+        <Color x:Key="NsOrange">#FF6B25</Color>
+        <Color x:Key="NsButtonInactive">#EDEDED</Color>
+        <Color x:Key="NsButtonActive">#4FACFE</Color>
+        <Color x:Key="NsButtonSelected">#003893</Color>
+        <Color x:Key="LightText">#d3d3d3</Color>
+        <Color x:Key="DarkBackground">#181818</Color>
+        <Color x:Key="HeaderText">White</Color>
+        <Color x:Key="HeaderBackground">#791AE5</Color>
+        <Color x:Key="SubHeaderBackground">#AA8DE2</Color>
+        <Color x:Key="SubHeaderText">White</Color>
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{StaticResource HeaderBackground}" />
+            <Setter Property="BarTextColor" Value="White" />
+        </Style>
+
+          <Style x:Key="NewListTitle" TargetType="Label">
+          
+            <Setter Property="FontSize" Value="35" />
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="FontAttributes" Value="Bold" />
+          
+            <Setter Property ="FontFamily" Value = "Roboto"/>
+            <Setter Property ="LineBreakMode" Value = "WordWrap"/>
+            <Setter Property="AutomationProperties.IsInAccessibleTree" Value="True"/>
+        </Style>
+         <Style x:Key="SmallLbl" TargetType="Label">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="18" />
+             <Setter Property ="FontFamily" Value = "Roboto"/>
+            <Setter Property ="LineBreakMode" Value = "WordWrap"/>
+            <Setter Property="AutomationProperties.IsInAccessibleTree" Value="True"/>
+        </Style>
+         <Style x:Key="EventLbl" TargetType="Label">
+            <Setter Property="TextColor" Value="#303F9F" />
+            <Setter Property="FontSize" Value="18" />
+             <Setter Property ="FontFamily" Value = "Futura"/>
+            <Setter Property ="LineBreakMode" Value = "WordWrap"/>
+            <Setter Property="AutomationProperties.IsInAccessibleTree" Value="True"/>
+        </Style>
+         <Style x:Key="EventLblTitle" TargetType="Label">
+            <Setter Property="TextColor" Value="#791AE5" />
+            <Setter Property="FontSize" Value="20" />
+             <Setter Property ="FontFamily" Value = "Futura"/>
+            <Setter Property ="LineBreakMode" Value = "WordWrap"/>
+            <Setter Property="AutomationProperties.IsInAccessibleTree" Value="True"/>
+        </Style>
+        <Style x:Key="EventLbllabel" TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="18" />
+             <Setter Property ="FontFamily" Value = "Futura"/>
+            <Setter Property ="LineBreakMode" Value = "WordWrap"/>
+            <Setter Property="AutomationProperties.IsInAccessibleTree" Value="True"/>
+        </Style>
+        
+        <Style x:Key="SubTitleLbl" TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Margin" Value="0,10" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+            <Setter Property ="FontFamily" Value = "Roboto"/>
+            <Setter Property ="LineBreakMode" Value = "WordWrap"/>
+            <Setter Property="AutomationProperties.IsInAccessibleTree" Value="True"/>
+        </Style>
+        <Style x:Key="ToolbarTitle" TargetType="Label">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property ="FontFamily" Value = "Roboto"/>
+            <Setter Property ="FontAttributes" Value = "Bold"/>
+            <Setter Property="AutomationProperties.IsInAccessibleTree" Value="True"/>
+        </Style>
+    </Application.Resources>
+</Application>

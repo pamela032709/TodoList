@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+   xmlns:viewModels="clr-namespace:FridaysTodoList.ViewModels"
+   xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FridaysTodoList.Views.DescriptionPaneView">
+     <ContentView.BindingContext>
+         <viewModels:TitleViewModel/>
+      </ContentView.BindingContext>
+    <Grid ColumnSpacing="0" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Image Aspect="Fill" HorizontalOptions="Fill" Source="FadeToBlack.png" />
+        <BoxView Grid.Row="1" BackgroundColor="{StaticResource DarkBackground}" />
+        <Label x:Name="Description" Grid.Row="1"  HorizontalTextAlignment="Center" Text="" TextColor="{StaticResource LightText}" Style="{StaticResource SmallLbl}" />
+        <Button BackgroundColor="{StaticResource HeaderBackground}" FontAttributes="Bold" Font="Futura" Text="Add +" Command="{Binding AddCommand}" TextColor="White" Grid.Row="2"></Button>
+    </Grid>
+</ContentView>

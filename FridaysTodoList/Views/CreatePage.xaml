@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+            xmlns:views="clr-namespace:FridaysTodoList.Views"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" ios:Page.UseSafeArea="true"
+            BackgroundColor="#F0F0F0"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="FridaysTodoList.Views.CreatePage">
+
+     <Grid Padding="0" ColumnSpacing="0" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="AUTO" />
+        </Grid.RowDefinitions>
+
+        <Image x:Name="MainImage" Grid.Row="0" Grid.RowSpan="2" Aspect="AspectFill" Source="todo.jpg">
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Handle_Tapped" />
+            </Image.GestureRecognizers>
+        </Image>
+
+        <views:ExpandBarView x:Name="ExpandBar" Grid.Row="1" Padding="0" TranslationY="1" VerticalOptions="End" />
+
+        <views:DescriptionPaneView x:Name="BottomFrame" Grid.Row="1" IsVisible="true"  Text=" To add a new list tap below" VerticalOptions="End" />
+
+        <views:TitleView x:Name="Title" Grid.Row="0" Margin="0,40,0,0" HorizontalOptions="Start" VerticalOptions="Start" />
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage  xmlns:viewModels="clr-namespace:FridaysTodoList.ViewModels" Title="{Binding Title}"
+             xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FridaysTodoList.Views.TodoPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"  Command="{Binding OnSaveCommand}">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <viewModels:TitleViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Margin="10">
+
+        <Entry Text="{Binding Name}" PlaceholderColor="{StaticResource HeaderBackground}" Placeholder="Title" Style="{StaticResource EventLbl}"  />
+        <Entry Text="{Binding Notes}" PlaceholderColor="{StaticResource HeaderBackground}" Placeholder="Notes" Style="{StaticResource EventLbl}" />
+        <StackLayout>
+
+            <Grid VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Label Style="{StaticResource EventLbl}" TextColor="{StaticResource HeaderBackground}" Grid.Row="0" VerticalOptions="Center" Grid.Column="0" Text="Use current location" >
+
+                </Label>
+                <Switch Grid.Row="0" Grid.Column="1" VerticalOptions="Center" IsToggled="{Binding UseLocation}" />
+            </Grid>
+        </StackLayout>
+
+
+        <Label Style="{StaticResource EventLbl}" TextColor="{StaticResource HeaderBackground}" Text="Start Date:"/>
+
+        <!-- Date Picker using a custom display format -->
+        <DatePicker Date="{Binding BookingDate}" TextColor="#FF4081" FontAttributes="Bold" Format="MMMM d, yyyy"  />
+
+    </StackLayout>
+
+
+
+
+    <!--<TableView>
+			<TableRoot>
+				<TableSection Title="New Event">
+					
+					<EntryCell Label="{Binding Name}" Placeholder="Title" Keyboard="Default" />
+					<EntryCell Label="{Binding Notes}" Keyboard="Default" Placeholder="Notes" />
+					<EntryCell Label="{Binding Location}" Placeholder="Location"/>
+					</TableSection>
+				<TableSection Title="Alerts &amp; Reminders">
+					<SwitchCell Text="All-day"  OnColor="BlanchedAlmond" />
+
+						</TableSection>
+
+			</TableRoot>
+
+		</TableView>-->
+
+
+    <!--<Label Text="Done" />-->
+    <!--<Switch IsToggled="{Binding Done}" />-->
+    <!--<Button Text="Save"  Command="{Binding OnSaveCommand}"  />-->
+
+
+</ContentPage>

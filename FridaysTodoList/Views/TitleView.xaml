@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+             xmlns:viewModels="clr-namespace:FridaysTodoList.ViewModels"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FridaysTodoList.Views.TitleView">
+      <ContentView.BindingContext>
+         <viewModels:TitleViewModel/>
+      </ContentView.BindingContext>
+ 
+     <Grid ColumnSpacing="0" RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <BoxView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="{StaticResource HeaderBackground}" />
+        <Label
+            Style="{StaticResource NewListTitle}"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+           
+            Text="New List"
+            TextColor="{StaticResource HeaderText}" />
+        <BoxView Grid.Row="1" Grid.Column="1" BackgroundColor="{StaticResource SubHeaderBackground}" />
+        <Label
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="20,0"
+            HorizontalOptions="End"
+            Text="{Binding Today}"
+            TextColor="{StaticResource SubHeaderText}"
+            VerticalOptions="Center" />
+    </Grid>
+</ContentView>
